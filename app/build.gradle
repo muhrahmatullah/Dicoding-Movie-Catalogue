@@ -11,9 +11,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug{
+            buildConfigField 'String', "ApiKey", Catalogue_Movie_ApiKey
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "ApiKey", Catalogue_Movie_ApiKey
         }
     }
 }
@@ -35,5 +39,9 @@ dependencies {
     //networking image request
     androidTestImplementation 'com.squareup.picasso:picasso:2.71828'
 
+    //material search
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
+
+    //view binding
     implementation 'com.jakewharton:butterknife:8.8.1'
 }
