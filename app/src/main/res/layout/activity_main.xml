@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        style="@style/MaterialSearchBarLight"
+        app:mt_hint="@string/search_hint"
+        app:mt_placeholder="@string/search_hint"
+        app:mt_maxSuggestionsCount="5"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchBar" />
+
 </LinearLayout>
