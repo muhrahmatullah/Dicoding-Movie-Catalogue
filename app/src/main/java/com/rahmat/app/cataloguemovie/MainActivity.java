@@ -2,12 +2,16 @@ package com.rahmat.app.cataloguemovie;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.rest.MovieClient;
@@ -22,15 +26,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
+
 public class MainActivity extends AppCompatActivity implements
         MaterialSearchBar.OnSearchActionListener{
 
-    private final static String API_KEY = BuildConfig.ApiKey;
+
     List<MovieResult> movieList;
+    ItemMovieAdapter movieAdapter;
 
-    //@BindView(R.id.searchBar)
+    @BindView(R.id.searchBar)
     MaterialSearchBar materialSearchBar;
-
+    @BindView(R.id.recycler_movie)
+    RecyclerView recyclerView;
     MovieInterface movieService;
     Call<Movie> movieCall;
 
@@ -39,12 +47,21 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //ButterKnife.bind(this);
-        materialSearchBar = findViewById(R.id.searchBar);
+        ButterKnife.bind(this);
+        //materialSearchBar = findViewById(R.id.searchBar);
 
         materialSearchBar.setOnSearchActionListener(this);
         materialSearchBar.inflateMenu(R.menu.main);
 
+        setupList();
+        getMovies();
+    }
+
+    void setupList(){
+        movieAdapter = new ItemMovieAdapter(this);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void getMovies(String query){
@@ -58,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
                 Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
+                movieAdapter.setMovieResult(movieList);
+                recyclerView.setAdapter(movieAdapter);
             }
 
             @Override
@@ -79,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
                 Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
+                movieAdapter.setMovieResult(movieList);
+                recyclerView.setAdapter(movieAdapter);
             }
 
             @Override

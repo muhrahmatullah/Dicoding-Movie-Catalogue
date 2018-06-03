@@ -20,6 +20,7 @@ android {
             buildConfigField 'String', "ApiKey", Catalogue_Movie_ApiKey
         }
     }
+
 }
 
 dependencies {
@@ -36,12 +37,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     //networking image request
-    androidTestImplementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
     //material search
     implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
 
     //view binding
     implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
 }

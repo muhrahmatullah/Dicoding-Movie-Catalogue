@@ -3,9 +3,10 @@ package com.rahmat.app.cataloguemovie.rest;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.BASE_URL;
+
 public class MovieClient {
 
-    public static final String BASE_URL = "http://api.themoviedb.org/3/";
     private static Retrofit retrofit = null;
 
 

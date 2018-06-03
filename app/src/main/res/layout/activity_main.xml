@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <com.mancj.materialsearchbar.MaterialSearchBar
@@ -17,5 +19,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/searchBar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_movie">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
