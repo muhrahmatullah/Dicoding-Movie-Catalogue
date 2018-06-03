@@ -61,14 +61,13 @@ public class MainActivity extends AppCompatActivity implements
         if(savedInstanceState != null){
             movieList = savedInstanceState.
                     getParcelableArrayList(UtilsConstant.MOVIE_LIST_INSTANCE);
+            isPopular = savedInstanceState.getBoolean(UtilsConstant.MOVIE_POPULAR_BOOL);
+            totalResult = savedInstanceState.getInt(UtilsConstant.MOVIE_LIST_TOTAL);
+            q = savedInstanceState.getString(UtilsConstant.MOVIE_LIST_QUERY);
             movieAdapter.setMovieResult(movieList);
-            if(!savedInstanceState.getBoolean(UtilsConstant.MOVIE_POPULAR_BOOL)){
+            if(!isPopular){
             txthint.setText(getApplicationContext().getResources().getString(
-                    R.string.texthintresult, ((savedInstanceState.getInt(
-                            UtilsConstant.MOVIE_LIST_TOTAL)== 0) ? "0" :
-                            String.valueOf(savedInstanceState.getInt(
-                            UtilsConstant.MOVIE_LIST_TOTAL))),
-                            savedInstanceState.getString(UtilsConstant.MOVIE_LIST_QUERY)));
+                    R.string.texthintresult,totalResult , q));
             }else{
                 txthint.setText(R.string.texthintpopular);
             }
