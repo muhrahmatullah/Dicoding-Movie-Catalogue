@@ -1,13 +1,17 @@
 
 package com.rahmat.app.cataloguemovie.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 //import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
-public class MovieResult {
+public class MovieResult implements Parcelable {
 
     @SerializedName("adult")
     private Boolean mAdult;
@@ -150,4 +154,59 @@ public class MovieResult {
         mVoteCount = voteCount;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.mAdult);
+        dest.writeString(this.mBackdropPath);
+        dest.writeList(this.mGenreIds);
+        dest.writeValue(this.mId);
+        dest.writeString(this.mOriginalLanguage);
+        dest.writeString(this.mOriginalTitle);
+        dest.writeString(this.mOverview);
+        dest.writeValue(this.mPopularity);
+        dest.writeString(this.mPosterPath);
+        dest.writeString(this.mReleaseDate);
+        dest.writeString(this.mTitle);
+        dest.writeValue(this.mVideo);
+        dest.writeValue(this.mVoteAverage);
+        dest.writeValue(this.mVoteCount);
+    }
+
+    public MovieResult() {
+    }
+
+    protected MovieResult(Parcel in) {
+        this.mAdult = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.mBackdropPath = in.readString();
+        this.mGenreIds = new ArrayList<Long>();
+        in.readList(this.mGenreIds, Long.class.getClassLoader());
+        this.mId = (Long) in.readValue(Long.class.getClassLoader());
+        this.mOriginalLanguage = in.readString();
+        this.mOriginalTitle = in.readString();
+        this.mOverview = in.readString();
+        this.mPopularity = (Double) in.readValue(Double.class.getClassLoader());
+        this.mPosterPath = in.readString();
+        this.mReleaseDate = in.readString();
+        this.mTitle = in.readString();
+        this.mVideo = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.mVoteAverage = (Double) in.readValue(Double.class.getClassLoader());
+        this.mVoteCount = (Long) in.readValue(Long.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<MovieResult> CREATOR = new Parcelable.Creator<MovieResult>() {
+        @Override
+        public MovieResult createFromParcel(Parcel source) {
+            return new MovieResult(source);
+        }
+
+        @Override
+        public MovieResult[] newArray(int size) {
+            return new MovieResult[size];
+        }
+    };
 }

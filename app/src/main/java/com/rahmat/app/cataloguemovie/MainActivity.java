@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
@@ -16,6 +17,7 @@ import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.rest.MovieClient;
 import com.rahmat.app.cataloguemovie.rest.MovieInterface;
+import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,11 +36,16 @@ public class MainActivity extends AppCompatActivity implements
 
     List<MovieResult> movieList;
     ItemMovieAdapter movieAdapter;
+    boolean isPopular = true;
+    int totalResult = 0;
+    String q = "";
 
     @BindView(R.id.searchBar)
     MaterialSearchBar materialSearchBar;
     @BindView(R.id.recycler_movie)
     RecyclerView recyclerView;
+    @BindView(R.id.txt_hint)
+    TextView txthint;
     MovieInterface movieService;
     Call<Movie> movieCall;
 
@@ -48,13 +55,28 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        //materialSearchBar = findViewById(R.id.searchBar);
 
-        materialSearchBar.setOnSearchActionListener(this);
-        materialSearchBar.inflateMenu(R.menu.main);
-
+        setupSearchBar();
         setupList();
-        getMovies();
+        if(savedInstanceState != null){
+            movieList = savedInstanceState.
+                    getParcelableArrayList(UtilsConstant.MOVIE_LIST_INSTANCE);
+            movieAdapter.setMovieResult(movieList);
+            if(!savedInstanceState.getBoolean(UtilsConstant.MOVIE_POPULAR_BOOL)){
+            txthint.setText(getApplicationContext().getResources().getString(
+                    R.string.texthintresult, ((savedInstanceState.getInt(
+                            UtilsConstant.MOVIE_LIST_TOTAL)== 0) ? "0" :
+                            String.valueOf(savedInstanceState.getInt(
+                            UtilsConstant.MOVIE_LIST_TOTAL))),
+                            savedInstanceState.getString(UtilsConstant.MOVIE_LIST_QUERY)));
+            }else{
+                txthint.setText(R.string.texthintpopular);
+            }
+            recyclerView.setAdapter(movieAdapter);
+        }else{
+            getMovies();
+        }
+
     }
 
     void setupList(){
@@ -63,10 +85,16 @@ public class MainActivity extends AppCompatActivity implements
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
+    void setupSearchBar(){
+        materialSearchBar.setOnSearchActionListener(this);
+        materialSearchBar.inflateMenu(R.menu.main);
+    }
 
     private void getMovies(String query){
+        q = query;
+        isPopular = false;
         movieService = MovieClient.getClient().create(MovieInterface.class);
-        movieCall = movieService.getMovieBySearch(query, API_KEY);
+        movieCall = movieService.getMovieBySearch(q, API_KEY);
 
         movieList = new ArrayList<>();
 
@@ -75,6 +103,10 @@ public class MainActivity extends AppCompatActivity implements
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
                 Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
+                totalResult = response.body().getTotalResults().intValue();
+                txthint.setText(getApplicationContext().getResources().getString(
+                        R.string.texthintresult, ((totalResult== 0) ? "0" :
+                                String.valueOf(totalResult)), q));
                 movieAdapter.setMovieResult(movieList);
                 recyclerView.setAdapter(movieAdapter);
             }
@@ -88,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void getMovies(){
+        txthint.setText(R.string.texthintpopular);
         movieService = MovieClient.getClient().create(MovieInterface.class);
         movieCall = movieService.getPopularMovie(API_KEY);
 
@@ -108,6 +141,16 @@ public class MainActivity extends AppCompatActivity implements
                         , Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        ArrayList<MovieResult> movie = (ArrayList<MovieResult>) movieList;
+        outState.putParcelableArrayList(UtilsConstant.MOVIE_LIST_INSTANCE, movie);
+        outState.putInt(UtilsConstant.MOVIE_LIST_TOTAL, totalResult);
+        outState.putString(UtilsConstant.MOVIE_LIST_QUERY, q);
+        outState.putBoolean(UtilsConstant.MOVIE_POPULAR_BOOL, isPopular);
     }
 
     @Override
