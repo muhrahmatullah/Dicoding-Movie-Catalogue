@@ -1,6 +1,8 @@
 package com.rahmat.app.cataloguemovie.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rahmat.app.cataloguemovie.MovieDetailActivity;
 import com.rahmat.app.cataloguemovie.R;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.utils.DateFormator;
@@ -68,7 +71,8 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
             ButterKnife.bind(this, itemView);
         }
 
-        public void bindView(MovieResult movieResult){
+
+        public void bindView(final MovieResult movieResult){
             item_title.setText(movieResult.getTitle());
             item_rating.setText(itemView.getContext().getResources().getString(R.string.rating,
                     movieResult.getVoteAverage().toString()));
@@ -80,6 +84,15 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
                     .placeholder(R.drawable.ic_placeholder)
                     .error(R.drawable.ic_error)
                     .into(item_poster);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), MovieDetailActivity.class);
+                    intent.putExtra(UtilsConstant.MOVIE_DETAIL, movieResult);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
 
     }
