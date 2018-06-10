@@ -33,3 +33,9 @@ Kemudian hapus baris berikut pada file ***build.gradle***
 ```
 buildConfigField 'String', "ApiKey", Catalogue_Movie_ApiKey
 ```
+
+## Author
+
+* **Muhammad Rahmatullah**
+
+Jangan lupa untuk follow dan ★ ya :)
