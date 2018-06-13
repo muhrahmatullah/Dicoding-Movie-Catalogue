@@ -53,13 +53,9 @@
             android:orientation="vertical">
 
             <include layout="@layout/detail_info"/>
-
             <include layout="@layout/detail_overview"/>
 
-
         </LinearLayout>
-
-
 
     </android.support.v4.widget.NestedScrollView>
 

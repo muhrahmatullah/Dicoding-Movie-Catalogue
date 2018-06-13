@@ -30,8 +30,7 @@ import retrofit2.Response;
 
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
 
-public class MainActivity extends AppCompatActivity implements
-        MaterialSearchBar.OnSearchActionListener{
+public class MainActivity extends AppCompatActivity{
 
 
     List<MovieResult> movieList;
@@ -55,8 +54,6 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-
-        setupSearchBar();
         setupList();
         if(savedInstanceState != null){
             movieList = savedInstanceState.
@@ -67,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements
             movieAdapter.setMovieResult(movieList);
             if(!isPopular){
             txthint.setText(getApplicationContext().getResources().getString(
-                    R.string.texthintresult,totalResult , q));
+                    R.string.texthintresult,String.valueOf(totalResult) , q));
             }else{
                 txthint.setText(R.string.texthintpopular);
             }
@@ -84,10 +81,10 @@ public class MainActivity extends AppCompatActivity implements
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
-    void setupSearchBar(){
-        materialSearchBar.setOnSearchActionListener(this);
-        materialSearchBar.inflateMenu(R.menu.main);
-    }
+//    void setupSearchBar(){
+//        materialSearchBar.setOnSearchActionListener(this);
+//        materialSearchBar.inflateMenu(R.menu.main);
+//    }
 
     private void getMovies(String query){
         q = query;
@@ -152,19 +149,9 @@ public class MainActivity extends AppCompatActivity implements
         outState.putBoolean(UtilsConstant.MOVIE_POPULAR_BOOL, isPopular);
     }
 
-    @Override
-    public void onSearchStateChanged(boolean enabled) {
-
-    }
-
-    @Override
+    /*@Override
     public void onSearchConfirmed(CharSequence text) {
         String q = String.valueOf(text);
         getMovies(q);
-    }
-
-    @Override
-    public void onButtonClicked(int buttonCode) {
-
-    }
+    }*/
 }
