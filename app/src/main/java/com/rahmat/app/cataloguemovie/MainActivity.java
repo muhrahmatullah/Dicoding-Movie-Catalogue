@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity{
     int totalResult = 0;
     String q = "";
 
-    @BindView(R.id.searchBar)
-    MaterialSearchBar materialSearchBar;
     @BindView(R.id.recycler_movie)
     RecyclerView recyclerView;
     @BindView(R.id.txt_hint)
@@ -147,6 +145,35 @@ public class MainActivity extends AppCompatActivity{
         outState.putInt(UtilsConstant.MOVIE_LIST_TOTAL, totalResult);
         outState.putString(UtilsConstant.MOVIE_LIST_QUERY, q);
         outState.putBoolean(UtilsConstant.MOVIE_POPULAR_BOOL, isPopular);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setQueryHint(getString(R.string.search_hint));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                String q = query;
+                getMovies(q);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+        return true;
+
     }
 
     /*@Override
