@@ -10,7 +10,7 @@
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_movie">
+        android:id="@+id/recycler_movie_now">
 
     </android.support.v7.widget.RecyclerView>
 

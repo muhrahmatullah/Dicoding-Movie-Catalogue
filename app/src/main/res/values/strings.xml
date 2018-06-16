@@ -6,7 +6,6 @@
     <string name="release_date">Release Date : %s </string>
     <string name="texthintpopular">Showing you Popular Movie Right Now!</string>
     <string name="texthintresult">We found %1s movies with query %2s</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtupcoming">Upcoming</string>
+    <string name="txtnow">Now Playing</string>
 </resources>
