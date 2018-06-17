@@ -7,10 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface MovieInterface {
-
-    @GET("movie/popular")
-    Call<Movie> getPopularMovie(@Query("api_key") String apiKey);
-
+    
     @GET("movie/now_playing")
     Call<Movie> getNowPlayingMovie(@Query("api_key") String apiKey);
 
