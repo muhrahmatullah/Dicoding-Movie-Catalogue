@@ -18,9 +18,9 @@ width="256">&nbsp;&nbsp;&nbsp;
 * [x] Terdapat fitur untuk mencari film
 * [x] Halaman detail untuk menampilkan detail fim yang telah dipilih pada halaman list film.
 * [x] Tampilan poster dari film.
-* [ ] Navigasi untuk halaman upcoming, now playing, dan search.
-* [ ] Menggunakan recyclerview untuk menampilkan data bisa berupa list, atau card.
-* [ ] Halaman setting untuk mengganti bahasa atau localization. Aplikasi harus mendukung bahasa Indonesia dan bahasa Inggris.
+* [x] Navigasi untuk halaman upcoming, now playing, dan search.
+* [x] Menggunakan recyclerview untuk menampilkan data bisa berupa list, atau card.
+* [x] Halaman setting untuk mengganti bahasa atau localization. Aplikasi harus mendukung bahasa Indonesia dan bahasa Inggris.
 * [x] Semua fungsi dari fitur project sebelumnya (Submission Project Catalogue Movie) harus tetap berjalan.
 
 ### Petunjuk menjalankan source code aplikasi
