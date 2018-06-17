@@ -1,5 +1,6 @@
 package com.rahmat.app.cataloguemovie;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_SEARCH;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -78,11 +80,6 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-//        ArrayList<MovieResult> movie = (ArrayList<MovieResult>) movieList;
-//        outState.putParcelableArrayList(UtilsConstant.MOVIE_LIST_INSTANCE, movie);
-//        outState.putInt(UtilsConstant.MOVIE_LIST_TOTAL, totalResult);
-//        outState.putString(UtilsConstant.MOVIE_LIST_QUERY, q);
-//        outState.putBoolean(UtilsConstant.MOVIE_POPULAR_BOOL, isPopular);
     }
 
     @Override
@@ -99,7 +96,9 @@ public class MainActivity extends AppCompatActivity{
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
+                Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
+                intent.putExtra(INTENT_SEARCH, query);
+                startActivity(intent);
                 return false;
             }
 

@@ -15,5 +15,6 @@ public class UtilsConstant {
     public final static String MOVIE_LIST_TOTAL = "MOVIE_LIST_TOTAL";
     public final static String MOVIE_POPULAR_BOOL = "movie_popular_bool";
     public final static String MOVIE_DETAIL = "movie_detail";
+    public static final String INTENT_SEARCH = "intent_search";
 
 }

@@ -9,4 +9,5 @@
     <string name="txtupcoming">Upcoming</string>
     <string name="txtnow">Now Playing</string>
     <string name="setting">Setting</string>
+    <string name="refresh">Refresh</string>
 </resources>
