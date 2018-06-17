@@ -66,26 +66,6 @@ public class MainActivity extends AppCompatActivity{
         setUpViewpager(viewPager);
         tab.setupWithViewPager(viewPager);
 
-
-        //setupList();
-//        if(savedInstanceState != null){
-//            movieList = savedInstanceState.
-//                    getParcelableArrayList(UtilsConstant.MOVIE_LIST_INSTANCE);
-//            isPopular = savedInstanceState.getBoolean(UtilsConstant.MOVIE_POPULAR_BOOL);
-//            totalResult = savedInstanceState.getInt(UtilsConstant.MOVIE_LIST_TOTAL);
-//            q = savedInstanceState.getString(UtilsConstant.MOVIE_LIST_QUERY);
-//            movieAdapter.setMovieResult(movieList);
-////            if(!isPopular){
-////            txthint.setText(getApplicationContext().getResources().getString(
-////                    R.string.texthintresult,String.valueOf(totalResult) , q));
-////            }else{
-////                txthint.setText(R.string.texthintpopular);
-////            }
-//            recyclerView.setAdapter(movieAdapter);
-//        }else{
-//            getMovies();
-//        }
-
     }
 
     void setUpViewpager(ViewPager viewPager){
@@ -94,70 +74,6 @@ public class MainActivity extends AppCompatActivity{
         adapter.populateFragment(new UpcomingFragment(), getString(R.string.txtupcoming));
         viewPager.setAdapter(adapter);
     }
-
-//    void setupList(){
-//        movieAdapter = new ItemMovieAdapter(this);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-//    }
-//    void setupSearchBar(){
-//        materialSearchBar.setOnSearchActionListener(this);
-//        materialSearchBar.inflateMenu(R.menu.main);
-//    }
-
-    /*private void getMovies(String query){
-        q = query;
-        isPopular = false;
-        movieService = MovieClient.getClient().create(MovieInterface.class);
-        movieCall = movieService.getMovieBySearch(q, API_KEY);
-
-        movieList = new ArrayList<>();
-
-        movieCall.enqueue(new Callback<Movie>() {
-            @Override
-            public void onResponse(Call<Movie> call, Response<Movie> response) {
-                movieList = response.body().getResults();
-                Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
-                totalResult = response.body().getTotalResults().intValue();
-//                txthint.setText(getApplicationContext().getResources().getString(
-//                        R.string.texthintresult, ((totalResult== 0) ? "0" :
-//                                String.valueOf(totalResult)), q));
-                movieAdapter.setMovieResult(movieList);
-                recyclerView.setAdapter(movieAdapter);
-            }
-
-            @Override
-            public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Something went wrong"
-                        , Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
-
-    /*private void getMovies(){
-        //txthint.setText(R.string.texthintpopular);
-        movieService = MovieClient.getClient().create(MovieInterface.class);
-        movieCall = movieService.getPopularMovie(API_KEY);
-
-        movieList = new ArrayList<>();
-
-        movieCall.enqueue(new Callback<Movie>() {
-            @Override
-            public void onResponse(Call<Movie> call, Response<Movie> response) {
-                movieList = response.body().getResults();
-                Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
-                movieAdapter.setMovieResult(movieList);
-                recyclerView.setAdapter(movieAdapter);
-            }
-
-            @Override
-            public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Something went wrong"
-                        , Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -183,8 +99,7 @@ public class MainActivity extends AppCompatActivity{
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-//                String q = query;
-//                getMovies(q);
+
                 return false;
             }
 
@@ -197,10 +112,4 @@ public class MainActivity extends AppCompatActivity{
         return true;
 
     }
-
-    /*@Override
-    public void onSearchConfirmed(CharSequence text) {
-        String q = String.valueOf(text);
-        getMovies(q);
-    }*/
 }

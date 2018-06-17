@@ -8,4 +8,5 @@
     <string name="texthintresult">We found %1s movies with query %2s</string>
     <string name="txtupcoming">Upcoming</string>
     <string name="txtnow">Now Playing</string>
+    <string name="setting">Setting</string>
 </resources>
