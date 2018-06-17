@@ -80,8 +80,9 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
 
         public void bindView(final MovieResult movieResult){
             item_title.setText(movieResult.getTitle());
-            item_rating.setText(itemView.getContext().getResources().getString(R.string.rating,
-                    movieResult.getVoteAverage().toString()));
+//            item_rating.setText(itemView.getContext().getResources().getString(R.string.rating,
+//                    movieResult.getVoteAverage().toString()));
+            item_rating.setText(movieResult.getVoteAverage().toString());
 //            item_date.setText(itemView.getContext().getResources().getString(R.string.release_date,
 //                    DateFormator.getDateDay(movieResult.getReleaseDate())));
 

@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/item_poster"
-            android:layout_width="140dp"
-            android:layout_height="190dp"
-            tools:src="@drawable/ic_placeholder"/>
-        <TextView
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:background="@color/bgColor">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/movie_title"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/komika_title"
-            android:textSize="20sp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:text="Deadpool 2"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="2dp">
+            android:orientation="vertical">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_star_black_24dp"
-                android:layout_marginStart="8dp"/>
-
+                android:id="@+id/item_poster"
+                android:layout_width="130dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_placeholder"/>
             <TextView
-                android:id="@+id/movie_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginStart="4dp"
-                tools:text="8.0" />
+                android:id="@+id/movie_title"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/komika_title"
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Deadpool 2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_black_24dp"
+                    android:layout_marginStart="8dp"/>
+                <TextView
+                    android:id="@+id/movie_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp"
+                    tools:text="8.0" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share_black_24dp"
+                    android:tint="#b7b7b7"
+                    android:layout_marginStart="45dp"/>
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
-
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

@@ -49,6 +49,7 @@ public class NowFragment extends Fragment {
     ItemMovieAdapter movieAdapter;
     boolean isPopular = true;
     int totalResult = 0;
+    int columns = 0;
     String q = "";
 
     MovieInterface movieService;
@@ -67,8 +68,9 @@ public class NowFragment extends Fragment {
     }
 
     void initView(){
+        columns = getResources().getInteger(R.integer.collumn_count);
         movieAdapter = new ItemMovieAdapter(getActivity());
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), columns));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
