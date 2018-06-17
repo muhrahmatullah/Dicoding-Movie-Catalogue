@@ -1,6 +1,7 @@
 package com.rahmat.app.cataloguemovie;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
 
         if(id == R.id.setting){
+            Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(mIntent);
             return true;
         }
 
