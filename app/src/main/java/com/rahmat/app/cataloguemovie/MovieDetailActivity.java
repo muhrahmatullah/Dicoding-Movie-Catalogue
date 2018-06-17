@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,5 +71,17 @@ public class MovieDetailActivity extends AppCompatActivity {
                 DateFormator.getDateDay(movie.getReleaseDate())));
         tvRating.setText(getResources().getString(R.string.rating,
                 movie.getVoteAverage().toString()));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+            super.onBackPressed();
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

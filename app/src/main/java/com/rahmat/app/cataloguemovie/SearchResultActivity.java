@@ -1,5 +1,6 @@
 package com.rahmat.app.cataloguemovie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -57,7 +58,6 @@ public class SearchResultActivity extends AppCompatActivity {
             String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
             initView();
             getMovies(q);
-
         }
     }
 
@@ -85,7 +85,6 @@ public class SearchResultActivity extends AppCompatActivity {
                 movieAdapter.setMovieResult(movieList);
                 recyclerView.setAdapter(movieAdapter);
             }
-
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
                 Toast.makeText(SearchResultActivity.this, "Something went wrong"
