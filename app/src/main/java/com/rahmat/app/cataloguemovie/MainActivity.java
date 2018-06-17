@@ -88,11 +88,6 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
 
         if(id == R.id.setting){
-
-            return true;
-
-        }else if(id == R.id.refresh){
-
             return true;
         }
 

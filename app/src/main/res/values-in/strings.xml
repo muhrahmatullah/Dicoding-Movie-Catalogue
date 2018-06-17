@@ -11,4 +11,5 @@
     <string name="txtnow">Sedang Dimainkan</string>
     <string name="setting">Pengaturan</string>
     <string name="refresh">Segarkan</string>
+    <string name="share">Hello ini adalah film %1s dari Aplikasi Muh. Rahmatullah - Dicoding</string>
 </resources>

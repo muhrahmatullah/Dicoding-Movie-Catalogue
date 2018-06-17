@@ -68,6 +68,7 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
 //        TextView item_title;
 
         @BindView(R.id.item_poster) ImageView item_poster;
+        @BindView(R.id.icon_share) ImageView item_share;
         @BindView(R.id.movie_title) TextView item_title;
         @BindView(R.id.movie_rating) TextView item_rating;
 
@@ -100,6 +101,18 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
                     itemView.getContext().startActivity(intent);
                 }
             });
+            item_share.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT,
+                            context.getString(R.string.share, movieResult.getTitle()));
+                    sendIntent.setType("text/plain");
+                    itemView.getContext().startActivity(sendIntent);
+                }
+            });
+
         }
 
     }

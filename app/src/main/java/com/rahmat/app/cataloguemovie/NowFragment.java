@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -70,6 +71,17 @@ public class NowFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), columns));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.refresh){
+            getMovies();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void getMovies(){
