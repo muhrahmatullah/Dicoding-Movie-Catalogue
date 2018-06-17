@@ -11,6 +11,13 @@ public interface MovieInterface {
     @GET("movie/popular")
     Call<Movie> getPopularMovie(@Query("api_key") String apiKey);
 
+    @GET("movie/now_playing")
+    Call<Movie> getNowPlayingMovie(@Query("api_key") String apiKey);
+
+    @GET("movie/upcoming")
+    Call<Movie> getUpcomingMovie(@Query("api_key") String apiKey);
+
+
     @GET("search/movie/")
     Call<Movie> getMovieBySearch(@Query("query") String q, @Query("api_key") String apiKey);
 
