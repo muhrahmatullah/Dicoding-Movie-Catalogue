@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,4 +13,12 @@
 
     </android.support.v7.widget.RecyclerView>
 
-</FrameLayout>
+    <ProgressBar
+        android:layout_width="@dimen/pbardimen"
+        android:layout_height="@dimen/pbardimen"
+        android:id="@+id/progress_bar_coming"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

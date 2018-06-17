@@ -16,5 +16,4 @@ public class UtilsConstant {
     public final static String MOVIE_POPULAR_BOOL = "movie_popular_bool";
     public final static String MOVIE_DETAIL = "movie_detail";
 
-
 }

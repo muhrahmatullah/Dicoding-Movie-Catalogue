@@ -79,7 +79,7 @@ public class NowFragment extends Fragment {
         //txthint.setText(R.string.texthintpopular);
         showPbar();
         movieService = MovieClient.getClient().create(MovieInterface.class);
-        movieCall = movieService.getUpcomingMovie(API_KEY);
+        movieCall = movieService.getNowPlayingMovie(API_KEY);
 
         movieList = new ArrayList<>();
 
