@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.rahmat.app.cataloguemovie.MovieDetailActivity;
 import com.rahmat.app.cataloguemovie.R;
+import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.utils.DateFormator;
 import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
@@ -32,16 +33,16 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
         this.context = context;
     }
 
-    public void setMovieResult(List<MovieResult> movieResultList){
-        this.movieResultList = movieResultList;
-    }
-
     @Override
     public ItemMovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ItemMovieViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_item,
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie_poster,
                         parent, false)
         );
+    }
+
+    public void setMovieResult(List<MovieResult> movieResult){
+        this.movieResultList = movieResult;
     }
 
     @Override
@@ -54,16 +55,21 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
         return movieResultList.size();
     }
 
+    //View Holder
     class ItemMovieViewHolder extends RecyclerView.ViewHolder{
 
-        @BindView(R.id.movie_poster)
-        ImageView item_poster;
-        @BindView(R.id.item_date)
-        TextView item_date;
-        @BindView(R.id.item_rating)
-        TextView item_rating;
-        @BindView(R.id.item_title)
-        TextView item_title;
+//        @BindView(R.id.movie_poster)
+//        ImageView item_poster;
+//        @BindView(R.id.item_date)
+//        TextView item_date;
+//        @BindView(R.id.item_rating)
+//        TextView item_rating;
+//        @BindView(R.id.item_title)
+//        TextView item_title;
+
+        @BindView(R.id.item_poster) ImageView item_poster;
+        @BindView(R.id.movie_title) TextView item_title;
+        @BindView(R.id.movie_rating) TextView item_rating;
 
         ItemMovieViewHolder(View itemView) {
             super(itemView);
@@ -76,8 +82,8 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
             item_title.setText(movieResult.getTitle());
             item_rating.setText(itemView.getContext().getResources().getString(R.string.rating,
                     movieResult.getVoteAverage().toString()));
-            item_date.setText(itemView.getContext().getResources().getString(R.string.release_date,
-                    DateFormator.getDateDay(movieResult.getReleaseDate())));
+//            item_date.setText(itemView.getContext().getResources().getString(R.string.release_date,
+//                    DateFormator.getDateDay(movieResult.getReleaseDate())));
 
             Picasso.with(itemView.getContext())
                     .load(UtilsConstant.BASE_POSTER_URL+movieResult.getPosterPath())
