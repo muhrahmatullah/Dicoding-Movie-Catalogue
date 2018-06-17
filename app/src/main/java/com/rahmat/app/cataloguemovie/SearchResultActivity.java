@@ -92,5 +92,4 @@ public class SearchResultActivity extends AppCompatActivity {
             }
         });
     }
-
 }

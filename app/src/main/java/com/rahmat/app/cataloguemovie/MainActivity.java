@@ -84,6 +84,18 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id == R.id.setting){
+
+            return true;
+
+        }else if(id == R.id.refresh){
+
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
