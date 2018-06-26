@@ -4,7 +4,7 @@ Project challenge dari dicoding dalam kelas Menjadi Android Developer Expert (MA
 https://www.dicoding.com/academies/14/ . Big thanks to Google yang telah memberikan saya beasiswa
 untuk dapat mengikuti kelas ini.
 
-## Screen Shots
+## Screenshots
 
 <img src="https://github.com/muhrahmatullah/Dicoding-Movie-Catalogue/blob/master/screenshots/home.png"
 width="256">&nbsp;&nbsp;&nbsp;
