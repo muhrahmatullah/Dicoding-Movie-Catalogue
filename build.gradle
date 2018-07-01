@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.3'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -21,6 +21,18 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
     }
+}
+
+ext{
+    supportLibVersion = '26.1.0'
+    jUnitLibVersion = '4.12'
+    testRunnerLibVersion = '1.0.2'
+    espressoLibVersion = '3.0.2'
+    //for networking purpose
+    retrofitLibVersion = '2.4.0'
+    gsonConvLibVersion = '2.8.5'
+    picassoLibVersion = '2.5.2'
+    butterknifeLibVersion = '8.8.1'
 }
 
 task clean(type: Delete) {
