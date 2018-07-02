@@ -1,41 +1,28 @@
 package com.rahmat.app.cataloguemovie;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.adapter.ViewPagerAdapter;
 import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
-import com.rahmat.app.cataloguemovie.rest.MovieClient;
 import com.rahmat.app.cataloguemovie.rest.MovieInterface;
-import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_SEARCH;
 
 public class MainActivity extends AppCompatActivity{
@@ -65,6 +52,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
 
         setUpViewpager(viewPager);
         tab.setupWithViewPager(viewPager);
