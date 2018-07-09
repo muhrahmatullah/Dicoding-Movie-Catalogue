@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgColor"
-    tools:context=".NowFragment">
+    tools:context=".ui.main.NowFragment">
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="12dp"

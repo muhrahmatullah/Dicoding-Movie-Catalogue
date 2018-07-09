@@ -2,7 +2,6 @@ package com.rahmat.app.cataloguemovie.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.rahmat.app.cataloguemovie.MovieDetailActivity;
+import com.rahmat.app.cataloguemovie.ui.detail.MovieDetailActivity;
 import com.rahmat.app.cataloguemovie.R;
-import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
-import com.rahmat.app.cataloguemovie.utils.DateFormator;
 import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 import com.squareup.picasso.Picasso;
 

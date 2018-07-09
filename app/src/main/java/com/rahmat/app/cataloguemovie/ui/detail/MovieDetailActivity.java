@@ -1,21 +1,17 @@
-package com.rahmat.app.cataloguemovie;
+package com.rahmat.app.cataloguemovie.ui.detail;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.rahmat.app.cataloguemovie.R;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.utils.DateFormator;
 import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,24 +1,21 @@
-package com.rahmat.app.cataloguemovie;
+package com.rahmat.app.cataloguemovie.ui.search;
 
-
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.rahmat.app.cataloguemovie.R;
 import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.rest.MovieClient;
 import com.rahmat.app.cataloguemovie.rest.MovieInterface;
+import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,65 +28,49 @@ import retrofit2.Response;
 
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
 
+public class SearchResultActivity extends AppCompatActivity {
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class UpcomingFragment extends Fragment {
-
-
-    @BindView(R.id.recycler_movie_upcoming)
+    @BindView(R.id.recycler_search)
     RecyclerView recyclerView;
 
-    @BindView(R.id.progress_bar_coming)
-    ProgressBar progressBar;
+    @BindView(R.id.toolbar_search)
+    Toolbar toolbar;
 
-    List<MovieResult> movieList;
+    int columns = 0;
     ItemMovieAdapter movieAdapter;
 
+    List<MovieResult> movieList;
     MovieInterface movieService;
     Call<Movie> movieCall;
-    int columns;
-    public UpcomingFragment() {
-        // Required empty public constructor
-    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_upcoming, container, false);
-        ButterKnife.bind(this, rootView);
-        initView();
-        getMovies();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search_result);
 
-        return rootView;
+        ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if(getIntent() != null){
+            String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
+            initView();
+            getMovies(q);
+        }
     }
 
     void initView(){
         columns = getResources().getInteger(R.integer.collumn_count);
-        movieAdapter = new ItemMovieAdapter(getActivity());
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), columns));
+        movieAdapter = new ItemMovieAdapter(this);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, columns));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.refresh){
-            getMovies();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void getMovies(){
-        //txthint.setText(R.string.texthintpopular);
-        showPbar();
+    private void getMovies(final String q){
         movieService = MovieClient.getClient().create(MovieInterface.class);
-        movieCall = movieService.getUpcomingMovie(API_KEY);
+        movieCall = movieService.getMovieBySearch(q, API_KEY);
 
         movieList = new ArrayList<>();
 
@@ -98,24 +79,16 @@ public class UpcomingFragment extends Fragment {
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
                 Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
+                getSupportActionBar().setSubtitle(getString(R.string.texthintresult, response.body()
+                        .getTotalResults().toString(), q));
                 movieAdapter.setMovieResult(movieList);
                 recyclerView.setAdapter(movieAdapter);
-                hidePbar();
             }
-
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(getActivity(), "Something went wrong"
+                Toast.makeText(SearchResultActivity.this, "Something went wrong"
                         , Toast.LENGTH_SHORT).show();
-                hidePbar();
             }
         });
-    }
-
-    void showPbar(){
-        progressBar.setVisibility(View.VISIBLE);
-    }
-    void hidePbar(){
-        progressBar.setVisibility(View.GONE);
     }
 }
