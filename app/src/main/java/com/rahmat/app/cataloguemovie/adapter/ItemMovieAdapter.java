@@ -2,7 +2,6 @@ package com.rahmat.app.cataloguemovie.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +11,7 @@ import android.widget.TextView;
 
 import com.rahmat.app.cataloguemovie.MovieDetailActivity;
 import com.rahmat.app.cataloguemovie.R;
-import com.rahmat.app.cataloguemovie.model.Movie;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
-import com.rahmat.app.cataloguemovie.utils.DateFormator;
 import com.rahmat.app.cataloguemovie.utils.UtilsConstant;
 import com.squareup.picasso.Picasso;
 
@@ -58,15 +55,6 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
     //View Holder
     class ItemMovieViewHolder extends RecyclerView.ViewHolder{
 
-//        @BindView(R.id.movie_poster)
-//        ImageView item_poster;
-//        @BindView(R.id.item_date)
-//        TextView item_date;
-//        @BindView(R.id.item_rating)
-//        TextView item_rating;
-//        @BindView(R.id.item_title)
-//        TextView item_title;
-
         @BindView(R.id.item_poster) ImageView item_poster;
         @BindView(R.id.icon_share) ImageView item_share;
         @BindView(R.id.movie_title) TextView item_title;
@@ -77,16 +65,9 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
 
             ButterKnife.bind(this, itemView);
         }
-
-
         public void bindView(final MovieResult movieResult){
             item_title.setText(movieResult.getTitle());
-//            item_rating.setText(itemView.getContext().getResources().getString(R.string.rating,
-//                    movieResult.getVoteAverage().toString()));
             item_rating.setText(movieResult.getVoteAverage().toString());
-//            item_date.setText(itemView.getContext().getResources().getString(R.string.release_date,
-//                    DateFormator.getDateDay(movieResult.getReleaseDate())));
-
             Picasso.with(itemView.getContext())
                     .load(UtilsConstant.BASE_POSTER_URL+movieResult.getPosterPath())
                     .placeholder(R.drawable.ic_placeholder)

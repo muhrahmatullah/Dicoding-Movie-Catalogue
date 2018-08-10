@@ -78,10 +78,6 @@ public class UpcomingFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.refresh){
-            getMovies();
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
