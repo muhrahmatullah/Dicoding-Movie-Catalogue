@@ -1,0 +1,178 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:20:1-40:12
+MERGED from [com.android.support:design:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/fe5ec3586ff3787898cd9eff14f1a199/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ad91de6e57f206afe230399126090969/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/90452e5a13aa96d238ec7addf6229648/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/59fe5a84b11a13ac709f73354291cc7c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/31a3c1896b0629cebf0c509eea9894f8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/d5c7a4ade985cb9f9906ea301413f4c1/AndroidManifest.xml:2:1-7:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/5a3c892712b6bc8111686c4133f4a18f/AndroidManifest.xml:15:1-21:12
+MERGED from [net.zetetic:android-database-sqlcipher:3.5.7] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/android-database-sqlcipher-3.5.7.aar/d89f6441e59e05e5f0929caa3068ac64/AndroidManifest.xml:2:1-4:12
+MERGED from [android.arch.persistence.room:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cd8d179f8d9d0f8c741fa27a52a78adf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/1e2531ed4b6fbaaa453c0e85d964724e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/099e25e8be56075a9524fa6e71799d0f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0eb534913e08a23a584194579bb8c636/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/fd1f86057a2bee13bbd456a1c94e3875/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a45b347cda0c9b0eb77c42208f37aa66/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/86cce1952944409b16d363785b99c80d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.0.aar/712a473df4ca565b977a849da7224a30/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-1.1.0.aar/45f3e7165ef457facede20f88b42776c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/a6ca2eda9f4884eba944a3672fbfab2b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/433638507988536bd0cfe607d2aa5621/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aa45d6112c85bedb9f320dd089e8c14d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/3815664fff65403f3f1736dc32c8e488/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e840c9d32ff688775a48f50c55197231/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e26fa9dbd9f5c40fa80ec5cfa9c1e91b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/69c6334497b0c3a3685ca908f2cbb920/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:5:5-66
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:29:5-67
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:29:5-67
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:5:22-64
+uses-permission#com.rahmat.app.cataloguemovie.READ_DATABASE
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:6:5-83
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:6:22-80
+uses-permission#com.rahmat.app.cataloguemovie.WRITE_DATABASE
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:7:5-84
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:7:22-81
+application
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:10:5-26:19
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:32:5-38:19
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:32:5-38:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/90452e5a13aa96d238ec7addf6229648/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/90452e5a13aa96d238ec7addf6229648/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:16:9-40
+activity#com.rahmat.app.favoritemovies.MainActivity
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:17:9-23:20
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:17:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:21:27-74
+activity#com.rahmat.app.favoritemovies.DetailActivity
+ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:24:9-25:58
+	android:theme
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml:24:19-49
+uses-sdk
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:25:5-27:41
+MERGED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:design:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/fe5ec3586ff3787898cd9eff14f1a199/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/fe5ec3586ff3787898cd9eff14f1a199/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ad91de6e57f206afe230399126090969/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ad91de6e57f206afe230399126090969/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/90452e5a13aa96d238ec7addf6229648/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/90452e5a13aa96d238ec7addf6229648/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/59fe5a84b11a13ac709f73354291cc7c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/59fe5a84b11a13ac709f73354291cc7c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/31a3c1896b0629cebf0c509eea9894f8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/31a3c1896b0629cebf0c509eea9894f8/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/d5c7a4ade985cb9f9906ea301413f4c1/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/d5c7a4ade985cb9f9906ea301413f4c1/AndroidManifest.xml:5:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/5a3c892712b6bc8111686c4133f4a18f/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/5a3c892712b6bc8111686c4133f4a18f/AndroidManifest.xml:19:5-43
+MERGED from [net.zetetic:android-database-sqlcipher:3.5.7] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/android-database-sqlcipher-3.5.7.aar/d89f6441e59e05e5f0929caa3068ac64/AndroidManifest.xml:3:3-40
+MERGED from [net.zetetic:android-database-sqlcipher:3.5.7] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/android-database-sqlcipher-3.5.7.aar/d89f6441e59e05e5f0929caa3068ac64/AndroidManifest.xml:3:3-40
+MERGED from [android.arch.persistence.room:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cd8d179f8d9d0f8c741fa27a52a78adf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cd8d179f8d9d0f8c741fa27a52a78adf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/1e2531ed4b6fbaaa453c0e85d964724e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/1e2531ed4b6fbaaa453c0e85d964724e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/099e25e8be56075a9524fa6e71799d0f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/099e25e8be56075a9524fa6e71799d0f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0eb534913e08a23a584194579bb8c636/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0eb534913e08a23a584194579bb8c636/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/fd1f86057a2bee13bbd456a1c94e3875/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/fd1f86057a2bee13bbd456a1c94e3875/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a45b347cda0c9b0eb77c42208f37aa66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a45b347cda0c9b0eb77c42208f37aa66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/86cce1952944409b16d363785b99c80d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/86cce1952944409b16d363785b99c80d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.0.aar/712a473df4ca565b977a849da7224a30/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.0.aar/712a473df4ca565b977a849da7224a30/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-1.1.0.aar/45f3e7165ef457facede20f88b42776c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/db-1.1.0.aar/45f3e7165ef457facede20f88b42776c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/a6ca2eda9f4884eba944a3672fbfab2b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/a6ca2eda9f4884eba944a3672fbfab2b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/433638507988536bd0cfe607d2aa5621/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/433638507988536bd0cfe607d2aa5621/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aa45d6112c85bedb9f320dd089e8c14d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aa45d6112c85bedb9f320dd089e8c14d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/3815664fff65403f3f1736dc32c8e488/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/3815664fff65403f3f1736dc32c8e488/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e840c9d32ff688775a48f50c55197231/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e840c9d32ff688775a48f50c55197231/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e26fa9dbd9f5c40fa80ec5cfa9c1e91b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e26fa9dbd9f5c40fa80ec5cfa9c1e91b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/69c6334497b0c3a3685ca908f2cbb920/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/69c6334497b0c3a3685ca908f2cbb920/AndroidManifest.xml:20:5-44
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		ADDED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:30:5-76
+	android:name
+		ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:30:22-73
+provider#com.amitshekhar.DebugDBInitProvider
+ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:33:9-37:40
+	android:enabled
+		ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:36:13-35
+	android:authorities
+		ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:35:13-71
+	android:exported
+		ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from [com.amitshekhar.android:debug-db:1.0.4] /Users/muhrahmatullah/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.4.aar/1b49f54972586bca4ad0d49beaf7998f/AndroidManifest.xml:34:13-63
