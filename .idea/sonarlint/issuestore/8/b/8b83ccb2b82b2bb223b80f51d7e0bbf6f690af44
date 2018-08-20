@@ -1,0 +1,6 @@
+
+msquid:S1192"LDefine a constant instead of duplicating this literal "MovieDetail" 3 times.(ëÛëÿøÿÿÿÿ8Ù¼Í›Ñ,
+hsquid:S1192"MDefine a constant instead of duplicating this literal "MovieDetail1" 3 times.(ÇûØ8Ù¼Í›Ñ,
+gsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.( Å»í8Ù¼Í›Ñ,
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ƒ³»ƒúÿÿÿÿ8Ù¼Í›Ñ,
+gsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.( Å»í8Ù¼Í›Ñ,

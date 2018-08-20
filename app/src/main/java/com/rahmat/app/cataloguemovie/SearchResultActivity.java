@@ -1,18 +1,17 @@
 package com.rahmat.app.cataloguemovie;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.model.Movie;
+import com.rahmat.app.cataloguemovie.model.MovieFavorite;
 import com.rahmat.app.cataloguemovie.model.MovieResult;
 import com.rahmat.app.cataloguemovie.rest.MovieClient;
 import com.rahmat.app.cataloguemovie.rest.MovieInterface;
@@ -28,6 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.API_KEY;
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_DETAIL;
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_TAG;
 
 public class SearchResultActivity extends AppCompatActivity {
 
@@ -43,6 +44,8 @@ public class SearchResultActivity extends AppCompatActivity {
     List<MovieResult> movieList;
     MovieInterface movieService;
     Call<Movie> movieCall;
+    Call<MovieResult> movieFavoriteCall;
+    MovieResult movieResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +56,23 @@ public class SearchResultActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        movieList = new ArrayList<>();
+        movieResult = new MovieResult();
 
         if(getIntent() != null){
-            String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
-            initView();
-            getMovies(q);
+            if(getIntent().getStringExtra(INTENT_TAG).equals("search")){
+                String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
+                initView();
+                getMovies(q);
+            }else{
+                getSupportActionBar().setTitle("Favorite Movie");
+                initView();
+                ArrayList<MovieFavorite> movieFavoriteArrayList = getIntent()
+                        .getParcelableArrayListExtra(INTENT_DETAIL);
+                for(MovieFavorite mF : movieFavoriteArrayList){
+                    getFavoriteMovies(mF.getId());
+                }
+            }
         }
     }
 
@@ -69,11 +84,28 @@ public class SearchResultActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
+    private void getFavoriteMovies(String id){
+        movieService = MovieClient.getClient().create(MovieInterface.class);
+        movieFavoriteCall = movieService.getMovieById(id, API_KEY);
+
+        movieFavoriteCall.enqueue(new Callback<MovieResult>() {
+            @Override
+            public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
+                movieList.add(response.body());
+                movieAdapter.setMovieResult(movieList);
+                recyclerView.setAdapter(movieAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResult> call, Throwable t) {
+                movieResult = null;
+            }
+        });
+    }
+
     private void getMovies(final String q){
         movieService = MovieClient.getClient().create(MovieInterface.class);
         movieCall = movieService.getMovieBySearch(q, API_KEY);
-
-        movieList = new ArrayList<>();
 
         movieCall.enqueue(new Callback<Movie>() {
             @Override
@@ -92,4 +124,5 @@ public class SearchResultActivity extends AppCompatActivity {
             }
         });
     }
+
 }

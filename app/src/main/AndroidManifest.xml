@@ -3,6 +3,12 @@
     package="com.rahmat.app.cataloguemovie">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    
+    <permission android:name="com.rahmat.app.cataloguemovie.READ_DATABASE"
+        android:protectionLevel="normal"/>
+
+    <permission android:name="com.rahmat.app.cataloguemovie.WRITE_DATABASE"
+        android:protectionLevel="normal"/>
 
     <application
         android:allowBackup="true"
@@ -27,6 +33,14 @@
         <activity android:name=".SearchResultActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        
+        <provider
+            android:authorities="com.rahmat.app.cataloguemovie"
+            android:name=".provider.MovieProvider"
+            android:exported="true"
+            android:readPermission="com.rahmat.app.cataloguemovie.READ_DATABASE"
+            android:writePermission="com.rahmat.app.cataloguemovie.WRITE_DATABASE">
+        </provider>
     </application>
 
 </manifest>

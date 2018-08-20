@@ -12,4 +12,5 @@
     <string name="refresh">Refresh</string>
     <string name="share">Hello this movie is %1s from Muh. Rahmatullah\'s application - Dicoding</string>
     <string name="overview">Overview</string>
+    <string name="favorite">Favorite</string>
 </resources>
