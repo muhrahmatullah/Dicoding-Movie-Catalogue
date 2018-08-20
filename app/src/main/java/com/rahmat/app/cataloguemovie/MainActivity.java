@@ -1,6 +1,7 @@
 package com.rahmat.app.cataloguemovie;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.TabLayout;
@@ -11,33 +12,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.rahmat.app.cataloguemovie.adapter.ItemMovieAdapter;
 import com.rahmat.app.cataloguemovie.adapter.ViewPagerAdapter;
-import com.rahmat.app.cataloguemovie.model.Movie;
-import com.rahmat.app.cataloguemovie.model.MovieResult;
-import com.rahmat.app.cataloguemovie.rest.MovieInterface;
+import com.rahmat.app.cataloguemovie.database.MovieContract;
+import com.rahmat.app.cataloguemovie.model.MovieFavorite;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
 
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_DETAIL;
 import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_SEARCH;
+import static com.rahmat.app.cataloguemovie.utils.UtilsConstant.INTENT_TAG;
 
 public class MainActivity extends AppCompatActivity{
-
-
-    List<MovieResult> movieList;
-    ItemMovieAdapter movieAdapter;
-    boolean isPopular = true;
-    int totalResult = 0;
-    String q = "";
-
-//    @BindView(R.id.recycler_movie)
-//    RecyclerView recyclerView;
-    MovieInterface movieService;
-    Call<Movie> movieCall;
 
     @BindView(R.id.toolbar_main)
     Toolbar toolbar;
@@ -67,11 +55,6 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
@@ -80,8 +63,26 @@ public class MainActivity extends AppCompatActivity{
             Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(mIntent);
             return true;
-        }
+        }else if(id == R.id.favorite){
+            ArrayList<MovieFavorite> movieFavoriteArrayList = new ArrayList<>();
+            Cursor cursor = getContentResolver().query(MovieContract.CONTENT_URI, null,
+                    null, null, null, null);
+            cursor.moveToFirst();
+            MovieFavorite favorite;
+            if(cursor.getCount() > 0){
+                do{
+                    favorite = new MovieFavorite(cursor.getString(cursor.getColumnIndexOrThrow(
+                            MovieContract.MovieColumns.MOVIE_ID)));
+                    movieFavoriteArrayList.add(favorite);
+                    cursor.moveToNext();
+                }while(!cursor.isAfterLast());
+            }
+            Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
+            intent.putExtra(INTENT_DETAIL, movieFavoriteArrayList);
+            intent.putExtra(INTENT_TAG, "detail");
+            startActivity(intent);
 
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity{
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
                 intent.putExtra(INTENT_SEARCH, query);
+                intent.putExtra(INTENT_TAG, "search");
                 startActivity(intent);
                 return false;
             }

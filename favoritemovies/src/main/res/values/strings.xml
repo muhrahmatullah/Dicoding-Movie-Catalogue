@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Favorite</string>
+    <string name="overview">Overview</string>
+
+    <string name="rating">Rating: %s/10 </string>
+    <string name="release_date">Release Date : %s </string>
+
+
+    <string name="share">Hello this movie is %1s from Muh. Rahmatullah\'s application - Dicoding</string>
+</resources>

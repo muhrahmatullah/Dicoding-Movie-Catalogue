@@ -4,10 +4,12 @@ package com.rahmat.app.cataloguemovie.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
+
 //import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
 
 //@Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
@@ -209,4 +211,9 @@ public class MovieResult implements Parcelable {
             return new MovieResult[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return getPosterPath() + getId();
+    }
 }
