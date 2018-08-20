@@ -1,0 +1,9 @@
+
+osquid:S3008"SRename this field "MOVIE_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãáñƒ8«ø‚ìÑ,
+qsquid:S3008"VRename this field "MOVIE_TITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôâã18«ø‚ìÑ,
+Jsquid:S1444".Make this "public static MOVIE_ID" field final(ãáñƒ8«ø‚ìÑ,
+Lsquid:S1444"1Make this "public static MOVIE_TITLE" field final(ôâã18«ø‚ìÑ,
+‡"squid:ClassVariableVisibilityCheck"TMake MOVIE_ID a static final constant or non-public and provide accessors if needed.(ãáñƒ8«ø‚ìÑ,
+‰"squid:ClassVariableVisibilityCheck"WMake MOVIE_TITLE a static final constant or non-public and provide accessors if needed.(ôâã18«ø‚ìÑ,
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(·àÇ8«ø‚ìÑ,
+[squid:S1118":Add a private constructor to hide the implicit public one.(¢ÌŠşûÿÿÿÿ8«ø‚ìÑ,
