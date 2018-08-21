@@ -156,6 +156,14 @@ public class MovieResult implements Parcelable {
         mVoteCount = voteCount;
     }
 
+    public MovieResult() {
+    }
+
+    @Override
+    public String toString() {
+        return getPosterPath() + getId();
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -177,9 +185,6 @@ public class MovieResult implements Parcelable {
         dest.writeValue(this.mVideo);
         dest.writeValue(this.mVoteAverage);
         dest.writeValue(this.mVoteCount);
-    }
-
-    public MovieResult() {
     }
 
     protected MovieResult(Parcel in) {
@@ -211,9 +216,4 @@ public class MovieResult implements Parcelable {
             return new MovieResult[size];
         }
     };
-
-    @Override
-    public String toString() {
-        return getPosterPath() + getId();
-    }
 }

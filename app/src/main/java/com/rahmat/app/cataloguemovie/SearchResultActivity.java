@@ -58,19 +58,33 @@ public class SearchResultActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         movieList = new ArrayList<>();
         movieResult = new MovieResult();
+        initView();
 
         if(getIntent() != null){
             if(getIntent().getStringExtra(INTENT_TAG).equals("search")){
-                String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
-                initView();
-                getMovies(q);
+                if(savedInstanceState!=null){
+                    ArrayList<MovieResult> list;
+                    list = savedInstanceState.getParcelableArrayList("now_movie");
+                    movieAdapter.setMovieResult(list);
+                    recyclerView.setAdapter(movieAdapter);
+                }else{
+                    String q = getIntent().getStringExtra(UtilsConstant.INTENT_SEARCH);
+                    getMovies(q);
+                }
             }else{
-                getSupportActionBar().setTitle("Favorite Movie");
-                initView();
-                ArrayList<MovieFavorite> movieFavoriteArrayList = getIntent()
-                        .getParcelableArrayListExtra(INTENT_DETAIL);
-                for(MovieFavorite mF : movieFavoriteArrayList){
-                    getFavoriteMovies(mF.getId());
+                if(savedInstanceState!=null){
+                    ArrayList<MovieResult> list;
+                    list = savedInstanceState.getParcelableArrayList("now_movie");
+                    Log.v("Isi list", ""+list.size());
+                    movieAdapter.setMovieResult(list);
+                    recyclerView.setAdapter(movieAdapter);
+                }else{
+                    getSupportActionBar().setTitle("Favorite Movie");
+                    ArrayList<MovieFavorite> movieFavoriteArrayList = getIntent()
+                            .getParcelableArrayListExtra(INTENT_DETAIL);
+                    for(MovieFavorite mF : movieFavoriteArrayList){
+                        getFavoriteMovies(mF.getId());
+                    }
                 }
             }
         }
@@ -125,4 +139,9 @@ public class SearchResultActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("now_movie", new ArrayList<>(movieAdapter.getList()));
+    }
 }

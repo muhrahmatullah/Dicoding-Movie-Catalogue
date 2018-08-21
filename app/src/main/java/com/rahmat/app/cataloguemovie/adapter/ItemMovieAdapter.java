@@ -42,6 +42,10 @@ public class ItemMovieAdapter extends RecyclerView.Adapter<ItemMovieAdapter.Item
         this.movieResultList = movieResult;
     }
 
+    public List<MovieResult> getList(){
+        return movieResultList;
+    }
+
     @Override
     public void onBindViewHolder(ItemMovieViewHolder holder, int position) {
         holder.bindView(movieResultList.get(position));

@@ -2,6 +2,7 @@ package com.rahmat.app.cataloguemovie;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -61,7 +62,14 @@ public class UpcomingFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_upcoming, container, false);
         ButterKnife.bind(this, rootView);
         initView();
-        getMovies();
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }else{
+            getMovies();
+        }
 
         return rootView;
     }
@@ -113,5 +121,22 @@ public class UpcomingFragment extends Fragment {
     }
     void hidePbar(){
         progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("now_movie", new ArrayList<>(movieAdapter.getList()));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }
     }
 }
