@@ -10,6 +10,11 @@
     <permission android:name="com.rahmat.app.cataloguemovie.WRITE_DATABASE"
         android:protectionLevel="normal"/>
 
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,6 +46,13 @@
             android:readPermission="com.rahmat.app.cataloguemovie.READ_DATABASE"
             android:writePermission="com.rahmat.app.cataloguemovie.WRITE_DATABASE">
         </provider>
+
+        <receiver
+            android:name=".notification.MovieDailyReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
     </application>
 
 </manifest>

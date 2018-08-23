@@ -18,5 +18,8 @@ public class UtilsConstant {
     public static final String INTENT_SEARCH = "intent_search";
     public static final String INTENT_TAG = "tag";
     public static final String INTENT_DETAIL = "detail";
+    public final static int NOTIFICATION_ID = 1001;
+    public final static String NOTIFICATION_CHANNEL_ID = "11001";
+
 
 }

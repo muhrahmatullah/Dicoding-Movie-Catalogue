@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.rahmat.app.cataloguemovie.adapter.ViewPagerAdapter;
 import com.rahmat.app.cataloguemovie.database.MovieContract;
 import com.rahmat.app.cataloguemovie.model.MovieFavorite;
+import com.rahmat.app.cataloguemovie.notification.MovieDailyReceiver;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity{
     TabLayout tab;
     @BindView(R.id.viewpager)
     ViewPager viewPager;
+    MovieDailyReceiver movieDailyReceiver = new MovieDailyReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         setUpViewpager(viewPager);
         tab.setupWithViewPager(viewPager);
-
+        movieDailyReceiver.setAlarm(this);
     }
 
     void setUpViewpager(ViewPager viewPager){
