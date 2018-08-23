@@ -7,9 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -81,16 +79,7 @@ public class UpcomingFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        return super.onOptionsItemSelected(item);
-    }
-
     private void getMovies(){
-        //txthint.setText(R.string.texthintpopular);
         showPbar();
         movieService = MovieClient.getClient().create(MovieInterface.class);
         movieCall = movieService.getUpcomingMovie(API_KEY);
@@ -101,7 +90,6 @@ public class UpcomingFragment extends Fragment {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
-                Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
                 movieAdapter.setMovieResult(movieList);
                 recyclerView.setAdapter(movieAdapter);
                 hidePbar();

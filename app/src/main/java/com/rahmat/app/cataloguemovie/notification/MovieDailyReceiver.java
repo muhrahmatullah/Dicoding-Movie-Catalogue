@@ -73,9 +73,9 @@ public class MovieDailyReceiver extends BroadcastReceiver {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 14);
-        calendar.set(Calendar.MINUTE, 57);
-        calendar.set(Calendar.SECOND, 30);
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
 
         if(Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             alarmManager.setInexactRepeating(
@@ -95,8 +95,8 @@ public class MovieDailyReceiver extends BroadcastReceiver {
         alarmManager.cancel(getPendingIntent(context));
     }
     private static PendingIntent getPendingIntent(Context context) {
-        Intent alarmIntent = new Intent(context, MovieDailyReceiver.class);
-        return PendingIntent.getBroadcast(context, NOTIFICATION_ID, alarmIntent,
+        Intent intent = new Intent(context, MovieDailyReceiver.class);
+        return PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent,
                 PendingIntent.FLAG_CANCEL_CURRENT);
     }
 

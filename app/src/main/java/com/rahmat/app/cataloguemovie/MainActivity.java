@@ -3,7 +3,6 @@ package com.rahmat.app.cataloguemovie;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import android.view.MenuItem;
 import com.rahmat.app.cataloguemovie.adapter.ViewPagerAdapter;
 import com.rahmat.app.cataloguemovie.database.MovieContract;
 import com.rahmat.app.cataloguemovie.model.MovieFavorite;
-import com.rahmat.app.cataloguemovie.notification.MovieDailyReceiver;
+import com.rahmat.app.cataloguemovie.utils.SettingsPrefActivity;
 
 import java.util.ArrayList;
 
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity{
     TabLayout tab;
     @BindView(R.id.viewpager)
     ViewPager viewPager;
-    MovieDailyReceiver movieDailyReceiver = new MovieDailyReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +42,6 @@ public class MainActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         setUpViewpager(viewPager);
         tab.setupWithViewPager(viewPager);
-        movieDailyReceiver.setAlarm(this);
     }
 
     void setUpViewpager(ViewPager viewPager){
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
 
         if(id == R.id.setting){
-            Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            Intent mIntent = new Intent(this, SettingsPrefActivity.class);
             startActivity(mIntent);
             return true;
         }else if(id == R.id.favorite){

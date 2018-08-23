@@ -3,17 +3,16 @@
     package="com.rahmat.app.cataloguemovie">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
-    <permission android:name="com.rahmat.app.cataloguemovie.READ_DATABASE"
-        android:protectionLevel="normal"/>
 
-    <permission android:name="com.rahmat.app.cataloguemovie.WRITE_DATABASE"
-        android:protectionLevel="normal"/>
-
+    <permission
+        android:name="com.rahmat.app.cataloguemovie.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.rahmat.app.cataloguemovie.WRITE_DATABASE"
+        android:protectionLevel="normal" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
 
     <application
         android:allowBackup="true"
@@ -34,25 +33,29 @@
         <activity
             android:name=".MovieDetailActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SearchResultActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchResultActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".utils.SettingsPrefActivity"
+            android:parentActivityName=".MainActivity"/>
+
         <provider
-            android:authorities="com.rahmat.app.cataloguemovie"
             android:name=".provider.MovieProvider"
+            android:authorities="com.rahmat.app.cataloguemovie"
             android:exported="true"
             android:readPermission="com.rahmat.app.cataloguemovie.READ_DATABASE"
-            android:writePermission="com.rahmat.app.cataloguemovie.WRITE_DATABASE">
-        </provider>
+            android:writePermission="com.rahmat.app.cataloguemovie.WRITE_DATABASE"></provider>
 
         <receiver
             android:name=".notification.MovieDailyReceiver"
             android:enabled="true"
-            android:exported="false">
-        </receiver>
-
+            android:exported="false"></receiver>
+        <receiver
+            android:name=".notification.MovieUpcomingReceiver"
+            android:enabled="true"
+            android:exported="false"></receiver>
     </application>
 
 </manifest>

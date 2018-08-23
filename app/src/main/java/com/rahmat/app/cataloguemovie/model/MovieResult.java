@@ -44,6 +44,16 @@ public class MovieResult implements Parcelable {
     @SerializedName("vote_count")
     private Long mVoteCount;
 
+    public MovieResult(long movieId, String movieTitle, String poster, String back, String date, Double rate, String ovr) {
+        mId = movieId;
+        mTitle = movieTitle;
+        mPosterPath = poster;
+        mBackdropPath = back;
+        mReleaseDate = date;
+        mVoteAverage = rate;
+        mOverview = ovr;
+    }
+
     public Boolean getAdult() {
         return mAdult;
     }
