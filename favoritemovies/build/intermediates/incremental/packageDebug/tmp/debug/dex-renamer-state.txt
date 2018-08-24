@@ -1,4 +1,0 @@
-#Fri Aug 10 15:17:26 WIB 2018
-base.0=/Users/muhrahmatullah/AndroidStudioProjects/CatalogueMovie/favoritemovies/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex

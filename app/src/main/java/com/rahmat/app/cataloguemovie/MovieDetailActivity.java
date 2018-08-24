@@ -42,7 +42,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     @BindView(R.id.fab)
     FloatingActionButton floatingActionButton;
 
-    String id, title;
+    String id, title, image;
 
     MovieResult movie;
 
@@ -60,6 +60,8 @@ public class MovieDetailActivity extends AppCompatActivity {
         updateUI(movie);
         id = movie.getId().toString();
         title = movie.getTitle();
+        image = movie.getBackdropPath();
+
 
         if (isRecordExists(movie.getId().toString())) {
             if (floatingActionButton != null) {
@@ -77,6 +79,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                     // Put the task description and selected mPriority into the ContentValues
                     contentValues.put(MovieContract.MovieColumns.MOVIE_ID, id);
                     contentValues.put(MovieContract.MovieColumns.MOVIE_TITLE, title);
+                    contentValues.put(MovieContract.MovieColumns.MOVIE_IMAGE, image);
                     // Insert the content values via a ContentResolver
                     getContentResolver().insert(MovieContract.CONTENT_URI, contentValues);
                     floatingActionButton.setImageResource(R.drawable.ic_favorite_black_24dp);
