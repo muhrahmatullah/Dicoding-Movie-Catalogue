@@ -2,6 +2,7 @@ package com.rahmat.app.cataloguemovie;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -58,8 +59,16 @@ public class NowFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_now, container, false);
         ButterKnife.bind(this, rootView);
+        movieList = new ArrayList<>();
         initView();
-        getMovies();
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }else{
+            getMovies();
+        }
 
         return rootView;
     }
@@ -74,17 +83,13 @@ public class NowFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
         return super.onOptionsItemSelected(item);
     }
 
     private void getMovies(){
-        //txthint.setText(R.string.texthintpopular);
         showPbar();
         movieService = MovieClient.getClient().create(MovieInterface.class);
         movieCall = movieService.getNowPlayingMovie(API_KEY);
-
-        movieList = new ArrayList<>();
 
         movieCall.enqueue(new Callback<Movie>() {
             @Override
@@ -124,4 +129,20 @@ public class NowFragment extends Fragment {
         super.onDetach();
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("now_movie", new ArrayList<>(movieAdapter.getList()));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }
+    }
 }

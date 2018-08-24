@@ -13,4 +13,18 @@
     <string name="refresh">Segarkan</string>
     <string name="share">Hello ini adalah film %1s dari Aplikasi Muh. Rahmatullah - Dicoding</string>
     <string name="overview">Sinopsis</string>
+    <string name="message_daily">Yuk nonton film-film bagus</string>
+    <string name="release_today_msg">%s Rilis hari ini, jangan lupa ditonton!</string>
+
+    <string name="pref_title_notifications">Notifications</string>
+    <string name="key_today_reminder">key_today_reminder</string>
+    <string name="daily_reminder">Pengingat Harian</string>
+    <string name="summary_daily_reminder">Kamu akan mendapatkan notifikasi setiap jam 8 pagi</string>
+    <string name="key_release_reminder">key_release_reminder</string>
+    <string name="summary_release_reminder">Kamu akan mendapatkan notifikasi setiap jam 7 pagi terkait film yang rilis hari ini</string>
+    <string name="release_reminder">Pengingat Rilis</string>
+    <string name="lang_title">Bahasa</string>
+    <string name="summary_lang">Pilih Bahasa</string>
+    <string name="lang">Bahasa</string>
+    <string name="key_lang">key_lang</string>
 </resources>

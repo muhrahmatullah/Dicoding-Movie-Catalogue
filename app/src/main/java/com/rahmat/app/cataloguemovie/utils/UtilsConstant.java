@@ -10,6 +10,7 @@ public class UtilsConstant {
     public final static String API_KEY = BuildConfig.ApiKey;
     public final static String BASE_POSTER_URL = "http://image.tmdb.org/t/p/w185";
     public final static String BASE_BACKDROP_URL = "http://image.tmdb.org/t/p/w780";
+    public final static String BASE_BACKDROP_URL_WIDGET = "http://image.tmdb.org/t/p/w500";
     public final static String MOVIE_LIST_INSTANCE = "MOVIE_LIST";
     public final static String MOVIE_LIST_QUERY = "MOVIE_LIST_QUERY";
     public final static String MOVIE_LIST_TOTAL = "MOVIE_LIST_TOTAL";
@@ -18,5 +19,8 @@ public class UtilsConstant {
     public static final String INTENT_SEARCH = "intent_search";
     public static final String INTENT_TAG = "tag";
     public static final String INTENT_DETAIL = "detail";
+    public final static int NOTIFICATION_ID = 1001;
+    public final static String NOTIFICATION_CHANNEL_ID = "11001";
+
 
 }

@@ -22,6 +22,11 @@ width="256">&nbsp;&nbsp;&nbsp;
 * [x] Menggunakan recyclerview untuk menampilkan data bisa berupa list, atau card.
 * [x] Halaman setting untuk mengganti bahasa atau localization. Aplikasi harus mendukung bahasa Indonesia dan bahasa Inggris.
 * [x] Semua fungsi dari fitur project sebelumnya (Submission Project Catalogue Movie) harus tetap berjalan.
+* [x] Tombol pada detail untuk menambahkan film favorit.
+* [x] Halaman untuk menampilkan list movie favorit.
+* [x] Menggunakan contentprovider.
+* [x] Membuat aplikasi baru yaitu aplikasi favorit (boleh dengan menggunakan module baru) untuk mengakses list favorit.
+
 
 ### Petunjuk menjalankan source code aplikasi
 

@@ -2,13 +2,12 @@ package com.rahmat.app.cataloguemovie;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -61,7 +60,14 @@ public class UpcomingFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_upcoming, container, false);
         ButterKnife.bind(this, rootView);
         initView();
-        getMovies();
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }else{
+            getMovies();
+        }
 
         return rootView;
     }
@@ -73,16 +79,7 @@ public class UpcomingFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        return super.onOptionsItemSelected(item);
-    }
-
     private void getMovies(){
-        //txthint.setText(R.string.texthintpopular);
         showPbar();
         movieService = MovieClient.getClient().create(MovieInterface.class);
         movieCall = movieService.getUpcomingMovie(API_KEY);
@@ -93,7 +90,6 @@ public class UpcomingFragment extends Fragment {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieList = response.body().getResults();
-                Log.v("Matt", "Number of movie with  = "+response.body().getTotalResults());
                 movieAdapter.setMovieResult(movieList);
                 recyclerView.setAdapter(movieAdapter);
                 hidePbar();
@@ -113,5 +109,22 @@ public class UpcomingFragment extends Fragment {
     }
     void hidePbar(){
         progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("now_movie", new ArrayList<>(movieAdapter.getList()));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            ArrayList<MovieResult> list;
+            list = savedInstanceState.getParcelableArrayList("now_movie");
+            movieAdapter.setMovieResult(list);
+            recyclerView.setAdapter(movieAdapter);
+        }
     }
 }
