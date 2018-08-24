@@ -1,6 +1,6 @@
 
-bsquid:HiddenFieldCheck"6Rename "id" which hides the field declared at line 45.(ªÙğúÿÿÿÿ8™‚íîÑ,
-Ksquid:S1066"/Merge this if statement with the enclosing one.(½·¼×8™‚íîÑ,
 msquid:S1192"LDefine a constant instead of duplicating this literal "MovieDetail" 3 times.(Ö½úùÿÿÿÿ8™‚íîÑ,
 osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(îÆÇĞüÿÿÿÿ8™‚íîÑ,
 Dsquid:S1659"#Declare "title" on a separate line.(Ò±ğÃÿÿÿÿÿ8™‚íîÑ,
+Ksquid:S1066"/Merge this if statement with the enclosing one.(½·¼×8™‚íîÑ,
+bsquid:HiddenFieldCheck"6Rename "id" which hides the field declared at line 45.(ªÙğúÿÿÿÿ8™‚íîÑ,

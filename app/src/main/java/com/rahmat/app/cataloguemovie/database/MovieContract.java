@@ -17,6 +17,7 @@ public class MovieContract {
         public static final String TABLE_MOVIE = "movie";
         public static String MOVIE_ID = "movie_id";
         public static String MOVIE_TITLE = "title";
+        public static String MOVIE_IMAGE = "image";
     }
 
     public static final String AUTHORITY = "com.rahmat.app.cataloguemovie";

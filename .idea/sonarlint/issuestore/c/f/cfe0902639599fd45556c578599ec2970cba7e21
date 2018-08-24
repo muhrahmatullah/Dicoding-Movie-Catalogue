@@ -1,2 +1,4 @@
 
-jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(¹‡ú©8ÎÜ¸ìÑ,
+hsquid:S1192C"JDefine a constant instead of duplicating this literal "now_movie" 3 times.(™»ªŸ8ÛÓËÖÕ,
+usquid:S37763"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ž¨Œþÿÿÿÿ8ÛÓËÖÕ,
+lsquid:MaximumInheritanceDepth!"<This class has 7 parents which is greater than 5 authorized.(¹‡ú©8ÛÓËÖÕ,

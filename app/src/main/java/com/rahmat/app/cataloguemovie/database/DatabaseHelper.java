@@ -16,10 +16,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String SQL_CREATE_TABLE_MOVIE = String.format("CREATE TABLE %s"
                     + " (%s INTEGER PRIMARY KEY AUTOINCREMENT," +
                     " %s TEXT NOT NULL," +
+                    " %s TEXT NOT NULL," +
                     " %s TEXT NOT NULL)",
             MovieContract.MovieColumns.TABLE_MOVIE,
             MovieContract.MovieColumns._ID,
             MovieContract.MovieColumns.MOVIE_ID,
+            MovieContract.MovieColumns.MOVIE_IMAGE,
             MovieContract.MovieColumns.MOVIE_TITLE
     );
 

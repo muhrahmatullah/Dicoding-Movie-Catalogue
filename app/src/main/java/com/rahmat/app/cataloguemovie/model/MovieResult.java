@@ -44,6 +44,16 @@ public class MovieResult implements Parcelable {
     @SerializedName("vote_count")
     private Long mVoteCount;
 
+    public MovieResult(long movieId, String movieTitle, String poster, String back, String date, Double rate, String ovr) {
+        mId = movieId;
+        mTitle = movieTitle;
+        mPosterPath = poster;
+        mBackdropPath = back;
+        mReleaseDate = date;
+        mVoteAverage = rate;
+        mOverview = ovr;
+    }
+
     public Boolean getAdult() {
         return mAdult;
     }
@@ -156,6 +166,14 @@ public class MovieResult implements Parcelable {
         mVoteCount = voteCount;
     }
 
+    public MovieResult() {
+    }
+
+    @Override
+    public String toString() {
+        return getPosterPath() + getId();
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -177,9 +195,6 @@ public class MovieResult implements Parcelable {
         dest.writeValue(this.mVideo);
         dest.writeValue(this.mVoteAverage);
         dest.writeValue(this.mVoteCount);
-    }
-
-    public MovieResult() {
     }
 
     protected MovieResult(Parcel in) {
@@ -211,9 +226,4 @@ public class MovieResult implements Parcelable {
             return new MovieResult[size];
         }
     };
-
-    @Override
-    public String toString() {
-        return getPosterPath() + getId();
-    }
 }
