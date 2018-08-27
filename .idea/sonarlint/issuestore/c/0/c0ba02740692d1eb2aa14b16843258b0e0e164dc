@@ -1,6 +1,7 @@
 
-msquid:S1192"LDefine a constant instead of duplicating this literal "MovieDetail" 3 times.(Ö½úùÿÿÿÿ8Ø»êîÑ,
-bsquid:HiddenFieldCheck"6Rename "id" which hides the field declared at line 45.(ªÙğúÿÿÿÿ8Ø»êîÑ,
-Dsquid:S1659"#Declare "title" on a separate line.(Ò±ğÃÿÿÿÿÿ8Ø»êîÑ,
-Ksquid:S1066"/Merge this if statement with the enclosing one.(½·¼×8Ø»êîÑ,
-osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(®’ç‹ûÿÿÿÿ8Ø»êîÑ,
+osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(®’ç‹ûÿÿÿÿ8Òïğ×Ö,
+bsquid:HiddenFieldCheck"6Rename "id" which hides the field declared at line 45.(ªÙğúÿÿÿÿ8Òïğ×Ö,
+msquid:S1192"LDefine a constant instead of duplicating this literal "MovieDetail" 3 times.(Ö½úùÿÿÿÿ8Òïğ×Ö,
+Dsquid:S1659"#Declare "image" on a separate line.(‡·—Ùøÿÿÿÿ8ˆó×Ö,
+Ksquid:S1066"/Merge this if statement with the enclosing one.(½·¼×8Òïğ×Ö,
+Dsquid:S1659"#Declare "title" on a separate line.(‡·—Ùøÿÿÿÿ8Òïğ×Ö,

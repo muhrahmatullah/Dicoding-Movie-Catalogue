@@ -1,5 +1,2 @@
 
-nsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ößÇŒùÿÿÿÿ8¥µ€œÑ,
-hsquid:S1192C"JDefine a constant instead of duplicating this literal "now_movie" 3 times.(™»ªŸ8©Í¡ÖÕ,
-Ysquid:S1854W"6Remove this useless assignment to local variable "id".(ªÙðúÿÿÿÿ8¥µ€œÑ,
-Jsquid:S1481W"'Remove this unused "id" local variable.(ªÙðúÿÿÿÿ8¥µ€œÑ,
+fsquid:S1192"JDefine a constant instead of duplicating this literal "now_movie" 3 times.(™»ªŸ8ÈýÂ´Ö,
