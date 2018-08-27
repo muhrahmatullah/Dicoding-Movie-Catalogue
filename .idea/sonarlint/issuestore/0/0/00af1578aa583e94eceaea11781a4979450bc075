@@ -1,3 +1,3 @@
 
-ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(ñÿØç8ÿ£ñõ—,
 usquid:S3008"YRename this field "DATABASE_TABLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºú’ì8ÿ£ñõ—,
+ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(ñÿØç8ÿ£ñõ—,

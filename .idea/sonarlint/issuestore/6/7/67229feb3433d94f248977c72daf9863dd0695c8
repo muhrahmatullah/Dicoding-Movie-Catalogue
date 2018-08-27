@@ -1,9 +1,12 @@
 
-osquid:S3008"SRename this field "MOVIE_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãáñƒ8ê¥ßšÑ,
-‰"squid:ClassVariableVisibilityCheck"WMake MOVIE_TITLE a static final constant or non-public and provide accessors if needed.(ôâã18ê¥ßšÑ,
-qsquid:S3008"VRename this field "MOVIE_TITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôâã18ê¥ßšÑ,
-Lsquid:S1444"1Make this "public static MOVIE_TITLE" field final(ôâã18ê¥ßšÑ,
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(üÇ·8ê¥ßšÑ,
-Jsquid:S1444".Make this "public static MOVIE_ID" field final(ãáñƒ8ê¥ßšÑ,
-[squid:S1118":Add a private constructor to hide the implicit public one.(¢ÌŠşûÿÿÿÿ8ê¥ßšÑ,
-‡"squid:ClassVariableVisibilityCheck"TMake MOVIE_ID a static final constant or non-public and provide accessors if needed.(ãáñƒ8ê¥ßšÑ,
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(üÇ·8–—í×Ö,
+"squid:ClassVariableVisibilityCheck"WMake MOVIE_IMAGE a static final constant or non-public and provide accessors if needed.(¡Èá¥ÿÿÿÿÿ8’î×Ö,
+‰"squid:ClassVariableVisibilityCheck"WMake MOVIE_TITLE a static final constant or non-public and provide accessors if needed.(ôâã18–—í×Ö,
+Jsquid:S1444".Make this "public static MOVIE_ID" field final(ãáñƒ8–—í×Ö,
+‡"squid:ClassVariableVisibilityCheck"TMake MOVIE_ID a static final constant or non-public and provide accessors if needed.(ãáñƒ8–—í×Ö,
+Lsquid:S1444"1Make this "public static MOVIE_TITLE" field final(ôâã18–—í×Ö,
+osquid:S3008"SRename this field "MOVIE_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãáñƒ8–—í×Ö,
+qsquid:S3008"VRename this field "MOVIE_TITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôâã18–—í×Ö,
+Rsquid:S1444"1Make this "public static MOVIE_IMAGE" field final(¡Èá¥ÿÿÿÿÿ8’î×Ö,
+wsquid:S3008"VRename this field "MOVIE_IMAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Èá¥ÿÿÿÿÿ8’î×Ö,
+[squid:S1118":Add a private constructor to hide the implicit public one.(¢ÌŠşûÿÿÿÿ8–—í×Ö,

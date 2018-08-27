@@ -11,8 +11,8 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
-import com.rahmat.app.cataloguemovie.GlideApp;
 import com.rahmat.app.cataloguemovie.R;
 import com.rahmat.app.cataloguemovie.database.MovieContract;
 import com.rahmat.app.cataloguemovie.model.MovieFavorite;
@@ -50,7 +50,6 @@ public class MovieRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     @Override
     public void onCreate() {
-
         cursor = mContext.getContentResolver().query(
                 MovieContract.CONTENT_URI,
                 null,
@@ -87,25 +86,23 @@ public class MovieRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
     @Override
     public RemoteViews getViewAt(int position) {
         MovieFavorite movieFavorite = getFav(position);
-        RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.movie_widget);
+        RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.movie_widget_item);
+
+        Log.d("Widgetku",movieFavorite.getTitle());
 
         Bitmap bmp = null;
         try {
-
-
-            bmp = GlideApp.with(mContext)
+            bmp = Glide.with(mContext)
                     .asBitmap()
                     .load(UtilsConstant.BASE_BACKDROP_URL_WIDGET+movieFavorite.getImage())
                     .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                     .get();
-
+            rv.setImageViewBitmap(R.id.img_widget,bmp);
+            rv.setTextViewText(R.id.tv_movie_title, movieFavorite.getTitle());
+            Log.d("Widgetku","Yessh");
         }catch (InterruptedException | ExecutionException e){
             Log.d("Widget Load Error","error");
         }
-
-        rv.setImageViewBitmap(R.id.img_widget,bmp);
-        rv.setTextViewText(R.id.tv_movie_title, movieFavorite.getTitle());
-
         Bundle extras = new Bundle();
         extras.putInt(MovieWidget.EXTRA_ITEM, position);
         Intent fillInIntent = new Intent();
