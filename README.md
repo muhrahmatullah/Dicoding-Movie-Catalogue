@@ -26,6 +26,10 @@ width="256">&nbsp;&nbsp;&nbsp;
 * [x] Halaman untuk menampilkan list movie favorit.
 * [x] Menggunakan contentprovider.
 * [x] Membuat aplikasi baru yaitu aplikasi favorit (boleh dengan menggunakan module baru) untuk mengakses list favorit.
+* [x] Tambahkan widget favorit movie dengan menggunakan StackWidget.
+* [x] Menambahkan scheduler untuk reminder
+* [x] Harus bisa menyesuaikan orientasi portrait dan landscape.
+* [x] Harus bisa menjaga data yang sudah dimuat / ditampilkan.
 
 
 ### Petunjuk menjalankan source code aplikasi
